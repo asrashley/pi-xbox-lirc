@@ -1,0 +1,29 @@
+#!/bin/sh
+NAME=xbox-daemon
+PIDFILE=/var/run/$NAME.pid
+DAEMON=/usr/bin/python
+DAEMON_ARGS=/usr/local/sbin/xbox-lirc.py
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
+. /lib/lsb/init-functions
+
+case "$1" in
+start)
+	if ! pidof xboxdrv >/dev/null
+	then
+		/usr/bin/xboxdrv --trigger-as-button --id 0 --led 2 --deadzone 4000 --silent &
+	fi
+	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test || return 1
+	start-stop-daemon --start --make-pidfile --pidfile $PIDFILE --background --exec $DAEMON -- $DAEMON_ARGS $DAEMON_OPTS || return 2
+	#/usr/bin/python /usr/local/sbin/xbox-lirc.py &
+	;;
+stop)
+	killall xboxdrv
+	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name $NAME
+	rm -f $PIDFILE
+	;;
+esac

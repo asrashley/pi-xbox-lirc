@@ -1,0 +1,2 @@
+ATTRS{idVendor}=="045e", ATTRS{idProduct}=="028e", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/usr/local/sbin/xbox-daemon start"
+
