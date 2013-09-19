@@ -6,8 +6,14 @@ Drive Humax DTR-T1000 from an Xbox360 controller using a Raspberry Pi
 Install
 -------
 
-sudo apt-get install xboxdrv
-sudo apt-get install lirc
+    sudo apt-get install xboxdrv
+    sudo apt-get install lirc
+    sudo cp lircd.conf /etc/lirc/
+    sudo cp hardware.conf /etc/lirc/
+    sudo /etc/init.d/lirc restart
+    sudo apt-get install python-dev
+    sudo apt-get install python-pip
+    sudo pip install evdev
 
 Enable auto-start
 
