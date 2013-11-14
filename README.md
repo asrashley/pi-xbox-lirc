@@ -1,31 +1,39 @@
 pi-xbox-lirc
 ============
 
-Drive YouView device from an Xbox360 controller using a Raspberry Pi.
+This project allows you to control a YouView device from an Xbox360 controller
+using a Raspberry Pi and an infra-red LED.
 
-Works with both Humax and Huawei devices, although you need to configure
-which device you are using as the remote control protols differ.
+It works with both Humax and Huawei devices, although you need to configure
+which device you are using, as the remote control protols differ.
 
 Automatic Install for Humax
 ---------------------------
-curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-humax.sh | sh
+To automatically download and install this package, and all of the packages
+it depends upon, log in the Raspberry Pi and type:
+
+    curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-humax.sh | sh
 
 Automatic Install for Huawei
 ----------------------------
-curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-huawei.sh | sh
+To automatically download and install this package, and all of the packages
+it depends upon, log in the Raspberry Pi and type:
+
+    curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-huawei.sh | sh
 
 Manual Install
 --------------
-	git clone https://github.com/asrashley/pi-xbox-lirc.git
-    cd pi-xbox-lirc
+To perform the steps in the automatic installer one-by-one:
 
-	sudo apt-get install git
+    git clone https://github.com/asrashley/pi-xbox-lirc.git
+    cd pi-xbox-lirc
+    sudo apt-get install git
     sudo apt-get install xboxdrv
     sudo apt-get install lirc
     sudo apt-get install python-dev
     sudo apt-get install python-pip
 
-Edit xboxlirc/target.py to select which device (Humax / Huawei) you want
+Edit src/xboxlirc/target.py to select which device (Humax / Huawei) you want
 to control.
 
     sudo cp lircd.conf /etc/lirc/
@@ -36,7 +44,7 @@ Enable auto-start
 -----------------
 The automatical installation scripts will also automatically enable the
 driver when the gamepad is installed, but if you used the manual install
-procedure, you will need to perform the following to enable auto-start:
+procedure, you will need to perform the following steps to enable auto-start:
 
     sudo python setup.py install
     sudo cp xbox-daemon /usr/local/sbin
