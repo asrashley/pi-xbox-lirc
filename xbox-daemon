@@ -2,7 +2,7 @@
 NAME=xbox-daemon
 PIDFILE=/var/run/$NAME.pid
 DAEMON=/usr/bin/python
-DAEMON_ARGS=/usr/local/sbin/xbox-lirc.py
+DAEMON_ARGS="-m xboxlirc"
 
 # Load the VERBOSE setting and other rcS variables
 . /lib/init/vars.sh
@@ -19,7 +19,6 @@ start)
 	fi
 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test || return 1
 	start-stop-daemon --start --make-pidfile --pidfile $PIDFILE --background --exec $DAEMON -- $DAEMON_ARGS $DAEMON_OPTS || return 2
-	#/usr/bin/python /usr/local/sbin/xbox-lirc.py &
 	;;
 stop)
 	killall xboxdrv
