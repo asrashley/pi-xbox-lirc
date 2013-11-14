@@ -15,7 +15,7 @@ GPIO in P17 of the Raspberry Pi.
     +3v3 ------------
               |
              +-+
-             | |   30R
+             | |   300R
              | |
              +-+
               |
@@ -28,9 +28,10 @@ GPIO in P17 of the Raspberry Pi.
               |
     P17 --------------
 
-I used an infrared LED from [maplin](http://maplin.co.uk/) (order code CY85G) and a 30 ohm
-resiter (order code M30R) which gives a lousy range, but doesn't require a transistor
-to drive the LED.
+I used an infrared LED from [maplin](http://maplin.co.uk/) (order code CY85G) and a 300 ohm
+resistor (order code M300R) which gives a lousy range, but doesn't require a transistor
+to drive the LED. You can increase the range by reducing the resistance. A 200 ohm resistor is
+safe, but do not go below 130 ohms as you risk destorying the GPIO port.
 
 Automatic Install for Humax
 ---------------------------
