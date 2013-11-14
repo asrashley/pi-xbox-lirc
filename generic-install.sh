@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo apt-get -y install git
 sudo apt-get -y install xboxdrv
 sudo apt-get -y install lirc
 sudo apt-get -y install python-dev
