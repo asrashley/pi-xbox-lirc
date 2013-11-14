@@ -1,4 +1,4 @@
-""script to act as a bridge between an Xbox360 controller and LIRC"""
+"""script to act as a bridge between an Xbox360 controller and LIRC"""
 
 import time
 from evdev import InputDevice, ecodes
