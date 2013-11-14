@@ -7,6 +7,31 @@ using a Raspberry Pi and an infra-red LED.
 It works with both Humax and Huawei devices, although you need to configure
 which device you are using, as the remote control protols differ.
 
+Hardware Construction
+---------------------
+This project assumes that an infra-red emitting diode has been connected to
+GPIO in P17 of the Raspberry Pi.
+
+    +3v3 ------------
+              |
+             +-+
+             | |   30R
+             | |
+             +-+
+              |
+              |
+             +-+
+             \ /  ->  Infrared emitter
+             ---  ->
+              |
+              |
+              |
+    P17 --------------
+
+I used an infrared LED from [maplin](http://maplin.co.uk/) (order code CY85G) and a 30 ohm
+resiter (order code M30R) which gives a lousy range, but doesn't require a transistor
+to drive the LED.
+
 Automatic Install for Humax
 ---------------------------
 To automatically download and install this package, and all of the packages
