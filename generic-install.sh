@@ -19,3 +19,4 @@ sudo chmod a+rx /usr/local/sbin/xbox-daemon
 sudo python setup.py install
 sudo cp 80-xbox360.rules /etc/udev/rules.d
 sudo chmod u+rx /etc/udev/rules.d/80-xbox360.rules
+echo "Finished installing Xbox-360 driver, you can now use the controller"
