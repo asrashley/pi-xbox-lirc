@@ -55,13 +55,13 @@ Manual Install
 --------------
 To perform the steps in the automatic installer one-by-one:
 
-    git clone https://github.com/asrashley/pi-xbox-lirc.git
-    cd pi-xbox-lirc
     sudo apt-get install git
     sudo apt-get install xboxdrv
     sudo apt-get install lirc
     sudo apt-get install python-dev
     sudo apt-get install python-pip
+    git clone https://github.com/asrashley/pi-xbox-lirc.git
+    cd pi-xbox-lirc
 
 Edit src/xboxlirc/target.py to select which device (Humax / Huawei) you want
 to control.
