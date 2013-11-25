@@ -38,14 +38,18 @@ Automatic Install for Humax
 To automatically download and install this package, and all of the packages
 it depends upon, log in the Raspberry Pi and type:
 
-    curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-humax.sh | sh
+    curl -L http://tinyurl.com/ncca9nr | sh
+
+The tiny URL is a link to https://raw.github.com/asrashley/pi-xbox-lirc/master/install-humax.sh
 
 Automatic Install for Huawei
 ----------------------------
 To automatically download and install this package, and all of the packages
 it depends upon, log in the Raspberry Pi and type:
 
-    curl https://raw.github.com/asrashley/pi-xbox-lirc/master/install-huawei.sh | sh
+    curl -L http://tinyurl.com/na943cn | sh
+    
+The tiny URL is a link to https://raw.github.com/asrashley/pi-xbox-lirc/master/install-huawei.sh
 
 Manual Install
 --------------
